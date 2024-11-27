@@ -8,7 +8,13 @@ Esta es la prueba 2
 Alonso 26-11
 
 
+
+=======
+# Prueba 4
+Alonso 26-11
+>>>>>>> 2bc3bb3efd29fb48133bb3b6e620feef17c86dd3
+
+<<<<<<< HEAD
+
 # Prueba 69
 Carlos CM
-
-

@@ -14,7 +14,7 @@ import { GalletoModule } from './modules/galleto.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GalletoModule
+    GalletoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

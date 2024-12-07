@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --brown: #986D4E;
+    --red: #DD3333;
+    --beige: #F1E7DB;
+    --gray: #D9D9D9;
+    --yellow: #EFD440;
+    --green: #66ED52;
+  }
+  

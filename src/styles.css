@@ -2,3 +2,11 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
+:root {
+  --beige: #F5F5DC; /* Color beige */
+  --brown: #956D4F; /* Marrón */
+  --yellow: #EFD43F; /* Amarillo */
+  --red: #EF1619; /* Rojo */
+  --green: #66ED52; /* Verde */
+  --gray: #D9D9D9; /* Gris */
+}

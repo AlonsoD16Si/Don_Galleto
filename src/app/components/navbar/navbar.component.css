@@ -22,6 +22,7 @@
     position: absolute; /* Asegúrate de que no dependa de márgenes */
     top: 0;
     left: 0;
+    font-family: "Halant";
   }
   
   /* Estilos para la sección izquierda */

@@ -8,24 +8,29 @@ import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { CocinaComponent } from './cocina/cocina.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ProduccionComponent,
     PrincipalComponent,
     VentasComponent,
-    NavbarComponent
+    NavbarComponent,
+    CocinaComponent
   ],
   imports: [
     CommonModule,
     ImageModule,
     ButtonModule,
     CardModule,
-    InputTextModule
+    InputTextModule,
+    FormsModule
   ],
   exports: [ 
     ProduccionComponent,
     PrincipalComponent,
     VentasComponent,
+    CocinaComponent
   ],
 })
 export class GalletoModule { }

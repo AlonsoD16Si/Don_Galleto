@@ -1,11 +1,15 @@
-<app-navbar></app-navbar> <!-- Navbar -->
+<app-navbar></app-navbar>
+<app-produccion></app-produccion>
+
+<!-- Tipos de venta -->
 <div class="venta-right">
-    <button class="venta-button">Por pieza</button>
-    <button class="venta-button">Por Kg</button>
-    <button class="venta-button">Suelta</button>
+    <button class="venta-button" (click)="seleccionarTipoVenta('pieza')">Por pieza</button>
+    <button class="venta-button" (click)="seleccionarTipoVenta('kilo')">Por Kg</button>
+    <button class="venta-button" (click)="seleccionarTipoVenta('suelta')">Suelta</button>
+    
 </div>
 
-<!-- Contador y Label como bloque independiente -->
+<!-- Contador -->
 <div class="contador">
     <label for="unidades" class="unidades-label">Unidades</label>
     <button class="contador-decrement" (click)="decrement()">-</button>
@@ -20,50 +24,55 @@
     </div>
 
     <div class="content">
-        <!-- Detalles de la venta -->
+        <!-- Detalles del ticket -->
         <ul>
-            <li>1pz - Galleta con chispas - $10.00</li>
-            <li>1pz - Galleta con chispas - $10.00</li>
-            <li>1pz - Galleta con chispas - $10.00</li>
+            <li *ngFor="let item of ticket">
+                {{ item.cantidad }} x {{ item.nombre }} - ${{ item.precio }}
+            </li>
         </ul>
     </div>
 
     <div class="footer">
         <!-- Subtotales y valores de pago -->
         <div class="subtotal">
-            <p>Sub-total</p>
-            <input type="text" placeholder="$0.00" />
+          <p>Sub-total</p>
+          <input type="text" [value]="subtotal | currency" readonly />
         </div>
         <div class="descuento">
-            <p>Descuento</p>
-            <input type="text" placeholder="$0.00" />
+          <p>Descuento</p>
+          <input type="number" [(ngModel)]="descuento" (input)="calcularTotalConDescuento()" placeholder="0.00" />
         </div>
         <div class="total">
-            <p>Total</p>
-            <input type="text" placeholder="$0.00" />
+          <p>Total</p>
+          <input type="text" [value]="totalConDescuento | currency" readonly />
         </div>
         <div class="pago">
-            <p>Pago</p>
-            <input type="text" placeholder="$0.00" />
+          <p>Pago</p>
+          <input type="number" [(ngModel)]="pago" (input)="calcularCambio()" placeholder="$0.00" />
         </div>
         <div class="cambio">
-            <p>Cambio</p>
-            <input id="disabled-input" type="text" pInputText [disabled]="true"  />
+          <p>Cambio</p>
+          <input id="disabled-input" type="text" pInputText [disabled]="true" [value]="cambio | currency" />
         </div>
-
-        <!-- Botón para registrar la compra -->
-        <button class="registrar-compra">Registrar</button>
-    </div>
+<!-- Checkbox para generar PDF -->
+<div class="checkbox-container">
+    <label for="generarPdf">
+      <input type="checkbox" id="generarPdf" [(ngModel)]="generarPdf"> Generar ticket en PDF
+    </label>
+  </div>
+  
+  <!-- Botón Registrar -->
+  <button class="registrar-compra" (click)="registrarVenta()">Registrar</button>
+  
 </div>
 
-<!-- Apartado de Galletas -->
+<!-- Galletas -->
 <div class="galletas-container">
     <div class="galletas-row">
         <div class="galleta-card" *ngFor="let galleta of galletas" (click)="seleccionarGalleta(galleta)">
-            <img [src]="galleta.imagen" alt="{{ galleta.nombre }}" class="galleta-img">
+            <img [src]="galleta.imagen" alt="{{ galleta.nombre }}" class="galleta-img" />
             <p class="galleta-nombre">{{ galleta.nombre }}</p>
         </div>
-
     </div>
-    <button class="modal-produccion">Produccion</button>
+    <button class="modal-produccion" (click)="produccion()">Producción</button>
 </div>

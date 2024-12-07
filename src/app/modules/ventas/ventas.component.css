@@ -1,3 +1,6 @@
+body {
+  font-family: "Halant";
+}
 /* Contenedor de los botones de venta alineados a la izquierda */
 .venta-right {
     margin-top: 165px;

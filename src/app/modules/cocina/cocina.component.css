@@ -1,0 +1,130 @@
+.cocina-container {
+    padding: 20px;
+    font-family: "Halant";
+    margin-top: 197px;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    background-color: var(--gray);
+    border: 1px solid var(--brown);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Halant";
+  }
+  
+  .alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    font-family: "Halant";
+  }
+  
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .btn-elaborar {
+    background-color: var(--amarillito);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Halant";
+    border-color: var(--borde);
+  }
+  
+  .status {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--brown);
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: "Halant";
+  }
+  
+  table th, table td {
+    border: 1px solid var(--brown);
+    padding: 8px;
+    text-align: center;
+  }
+
+  .table-header {
+    background-color: var(--brown);
+    color: white;
+  }
+  
+  .btn-accion {
+    background-color: var(--green);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: "Halant";
+  }
+  
+  .btn-accion:hover {
+    background-color: var(--brown);
+  }
+  
+  .status-terminado {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--green);
+    text-align: center;
+    font-family: "Halant";
+  }
+
+  .btn-cancelar {
+    background-color: var(--red);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-left: 5px;
+    font-family: "Halant";
+  }
+  
+  .btn-cancelar:hover {
+    background-color: var(--brown);
+    font-family: "Halant";
+  }
+  
+  

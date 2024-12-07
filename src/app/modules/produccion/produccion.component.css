@@ -1,0 +1,122 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Asegura que ocupe todo el ancho */
+  height: 100vh; /* Asegura que ocupe toda la altura */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Evita que se desborde fuera de la pantalla */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: var(--beige);
+  padding: 30px; /* Más espacio interno */
+  border-radius: 10px;
+  width: 90%; /* Ajusta el tamaño del modal al 90% del ancho */
+  max-width: 1200px; /* Tamaño máximo más grande */
+  max-height: 95%; /* Altura máxima aumentada */
+  overflow-y: auto; /* Permite scroll interno si el contenido es muy grande */
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Más sombra para mayor contraste */
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px; /* Botón de cierre más grande */
+  cursor: pointer;
+  color: var(--brown);
+  font-weight: bold;
+  z-index: 1001; /* Asegura que el botón esté encima */
+}
+
+.close-button:hover {
+  color: var(--red);
+}
+
+/* Cards container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas para aprovechar el espacio adicional */
+  gap: 20px; /* Espacio mayor entre tarjetas */
+  margin-top: 50px;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--gray);
+  border: 1px solid var(--brown);
+  padding: 15px; /* Espaciado interno mayor */
+  text-align: center;
+  position: relative;
+  height: auto; /* Ajuste automático al contenido */
+  width: 100%; /* Las tarjetas ocuparán toda la columna asignada */
+}
+
+/* Product image */
+.product-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 70%; /* Ajusta el tamaño de la imagen */
+  max-height: 70%;
+}
+
+/* Title */
+.title {
+  font-weight: bold;
+  color: var(--brown);
+  margin: 5px 0;
+}
+
+.progress-bar-row {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  margin-bottom: 10px; /* Espacio entre las filas */
+}
+
+.label-container {
+  width: 80px; /* Ancho fijo para alinear todas las etiquetas */
+  text-align: left; /* Alinea el texto a la izquierda */
+  font-size: 12px; /* Ajusta el tamaño de la fuente */
+  display: flex;
+  justify-content: space-between; /* Espacio entre texto y número */
+}
+
+.progress-bar-container {
+  flex-grow: 1; /* La barra ocupa el espacio restante */
+  background-color: var(--beige);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: 10px; /* Espacio entre la etiqueta y la barra */
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.sold-bar {
+  background-color: var(--brown);
+}
+
+.stock-bar {
+  background-color: var(--green);
+}
+

@@ -1,0 +1,51 @@
+<app-navbar></app-navbar> <!-- Navbar -->
+<div class="cocina-container">
+    <!-- Tarjetas de recetas -->
+    <div class="cards-container">
+        <div class="card" *ngFor="let receta of recetas">
+            <div class="alert" [ngStyle]="getAlertStyle(receta)">
+              <i [class]="getAlertIcon(receta)"></i>
+            </div>
+            <div class="content">
+              <p class="title">{{ receta.name }}</p>
+              <div class="actions">
+                <button class="btn-elaborar" (click)="elaborarPedido(receta)">Elaborar</button>
+                <span class="status">{{ receta.status }}</span>
+              </div>
+            </div>
+          </div>          
+    </div>
+  
+    <!-- Tabla de pedidos -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="table-header">N° Pedido</th>
+            <th class="table-header">Receta</th>
+            <th class="table-header">Tipo</th>
+            <th class="table-header">Estatus</th>
+            <th class="table-header">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos">
+            <td>{{ pedido.numero }}</td>
+            <td>{{ pedido.receta }}</td>
+            <td>{{ pedido.tipo }}</td>
+            <td>{{ pedido.estatus }}</td>
+            <td>
+                <ng-container *ngIf="pedido.estatus !== 'OK'; else terminadoTemplate">
+                  <button class="btn-accion" (click)="avanzarEstado(pedido)">Avanzar</button>
+                  <button class="btn-cancelar" (click)="cancelarPedido(pedido)">Cancelar</button>
+                </ng-container>
+                <ng-template #terminadoTemplate>
+                  <span class="status-terminado">Terminado</span>
+                </ng-template>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

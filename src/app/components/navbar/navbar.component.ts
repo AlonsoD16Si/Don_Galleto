@@ -18,11 +18,11 @@ export class NavbarComponent  implements OnInit {
     this.router.navigate(['/principal'])
   }
 
-  organizacion() {
-    this.router.navigate(['/organizacion']);
+  ventas() {
+    this.router.navigate(['/ventas']);
   }
-  navigateUsers() {
-    this.router.navigate(['/usuarios']);
+  produccion() {
+    this.router.navigate(['/produccion']);
   }
 
   cuentas(){

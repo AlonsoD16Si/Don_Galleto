@@ -83,6 +83,11 @@
     padding: 8px;
     text-align: center;
   }
+
+  .table-header {
+    background-color: var(--brown);
+    color: white;
+  }
   
   .btn-accion {
     background-color: var(--green);

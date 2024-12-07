@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<div class="navbar ">
+    <!-- Logo y sección izquierda -->
+    <div class="navbar-left">
+        <!-- Imagen con dimensiones específicas -->
+        <img [src]="rutaImagen + '/galleta2.png'" alt="Logo" />
+        
+        <!-- Botón justo al lado de la imagen -->
+        <button class="navbar-left-button" (click)="principal()">Don Galleto</button>
+      </div>
+      
+      
+  
+    <!-- Sección derecha -->
+    <div class="navbar-right">
+      <button class="navbar-button">Ventas</button>
+      <button class="navbar-button">Produccion</button>
+      <button class="navbar-button">Insumos</button>
+      <button class="navbar-button">Reportes</button>
+
+    </div>
+  </div>
+  

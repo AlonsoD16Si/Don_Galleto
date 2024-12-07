@@ -1,1 +1,69 @@
-<p>ventas works!</p>
+<app-navbar></app-navbar> <!-- Navbar -->
+<div class="venta-right">
+    <button class="venta-button">Por pieza</button>
+    <button class="venta-button">Por Kg</button>
+    <button class="venta-button">Suelta</button>
+</div>
+
+<!-- Contador y Label como bloque independiente -->
+<div class="contador">
+    <label for="unidades" class="unidades-label">Unidades</label>
+    <button class="contador-decrement" (click)="decrement()">-</button>
+    <span class="contador-valor">{{ count }}</span>
+    <button class="contador-increment" (click)="increment()">+</button>
+</div>
+
+<!-- Panel lateral derecho -->
+<div class="ticket-panel">
+    <div class="header">
+        <p class="date">{{ date | date: 'dd/MM/yyyy HH:mm a' }}</p>
+    </div>
+
+    <div class="content">
+        <!-- Detalles de la venta -->
+        <ul>
+            <li>1pz - Galleta con chispas - $10.00</li>
+            <li>1pz - Galleta con chispas - $10.00</li>
+            <li>1pz - Galleta con chispas - $10.00</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <!-- Subtotales y valores de pago -->
+        <div class="subtotal">
+            <p>Sub-total</p>
+            <input type="text" placeholder="$0.00" />
+        </div>
+        <div class="descuento">
+            <p>Descuento</p>
+            <input type="text" placeholder="$0.00" />
+        </div>
+        <div class="total">
+            <p>Total</p>
+            <input type="text" placeholder="$0.00" />
+        </div>
+        <div class="pago">
+            <p>Pago</p>
+            <input type="text" placeholder="$0.00" />
+        </div>
+        <div class="cambio">
+            <p>Cambio</p>
+            <input id="disabled-input" type="text" pInputText [disabled]="true"  />
+        </div>
+
+        <!-- Botón para registrar la compra -->
+        <button class="registrar-compra">Registrar</button>
+    </div>
+</div>
+
+<!-- Apartado de Galletas -->
+<div class="galletas-container">
+    <div class="galletas-row">
+        <div class="galleta-card" *ngFor="let galleta of galletas" (click)="seleccionarGalleta(galleta)">
+            <img [src]="galleta.imagen" alt="{{ galleta.nombre }}" class="galleta-img">
+            <p class="galleta-nombre">{{ galleta.nombre }}</p>
+        </div>
+
+    </div>
+    <button class="modal-produccion">Produccion</button>
+</div>

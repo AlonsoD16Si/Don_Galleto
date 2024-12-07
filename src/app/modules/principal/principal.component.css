@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  position: relative;
+  gap: 20px;
+  padding: 20px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  height: 250px;
+  width: 250px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.side-panel {
+  width: 389px; /* Ajusta al ancho necesario */
+  background-color: #f9f2e7;
+  border-radius: 27px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  gap: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+  margin-right: 35px;
+  top: 77;
+  height: 700px;
+}
+
+.side-panel .header {
+  font-size: 32px;
+  text-align: center;
+}
+
+.side-panel .content ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 25px;
+}
+
+.side-panel .content li {
+  margin: 5px 0;
+  font-size: 17px;
+}
+
+.side-panel .footer h4,
+.side-panel .footer p {
+  margin: 0;
+  text-align: center;
+  justify-content: end;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #cccccc;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 595px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  padding: 10px 10px; 
+  font-size: 20px; 
+  background-color: #cccccc; 
+  border: none; 
+  cursor: pointer;
+  position: relative;
+  width: 595px;
+  height: 45px;
+}
+
+.custom-button i {
+  position: absolute;
+  left: 10px; 
+  font-size: 25px;
+}
+
+
+
+

@@ -1,0 +1,231 @@
+/* Contenedor de los botones de venta alineados a la izquierda */
+.venta-right {
+    margin-top: 165px;
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+margin-left: 30px;  
+}
+  
+  .venta-button {
+    background-color: #D9D9D9; /* Color gris de los botones */
+    width: 152px;
+    height: 180px;
+    padding: 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .venta-button:hover {
+    background-color: #bbbbbb; /* Cambio de color al pasar el cursor */
+  }
+  
+  /* Estilos para el contador */
+  .unidades-label {
+    font-size: 30px;
+    color: #333;
+    background-color: #cccccc; /* Fondo gris */
+    padding: 5px 10px;
+    border: #333 solid 2px;
+  }
+  
+  .contador {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contador al inicio */
+    margin-left: 30px;  
+
+  }
+  
+  .contador-decrement,
+  .contador-increment {
+    background-color: #D9D9D9;
+    width: 53.5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .contador-valor {
+    font-size: 30px;
+    color: #333;
+    background-color: #F5DEB3;
+    padding: 5px 15px;
+    border: #333 solid 2px;
+    width: 189px;
+    text-align: center;
+  }
+  
+  .ticket-panel {
+    width: 456px; 
+    background-color: #D9D9D9; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+    margin-right: 35px;
+    top: 77px; 
+    height: 700px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.ticket-panel .header {
+    font-size: 18px;
+    text-align: center;
+}
+
+.ticket-panel .content {
+    background-color: #D9D9D9;
+    height: 395px;
+    overflow-y: scroll;
+}
+
+.ticket-panel .content ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.ticket-panel .content li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.ticket-panel .footer {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ticket-panel .footer p {
+    margin: 0;
+}
+
+.ticket-panel .subtotal,
+.ticket-panel .descuento,
+.ticket-panel .total,
+.ticket-panel .pago,
+.ticket-panel .cambio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.ticket-panel input {
+    padding: 5px;
+    font-size: 16px;
+    width: 170px;
+    text-align: right;
+    border: 1px solid #ccc;
+    background-color: #F5DEB3;
+}
+
+.registrar-compra {
+    background-color: #F2DEB3;
+    border-color: #996B4F;
+        color: rgb(0, 0, 0);
+        font-size: 24px;
+        padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+    width: 160px;
+    height: 92px;
+    margin-top: 20px;
+}
+
+.registrar-compra:hover {
+    background-color: #fefefe; 
+}
+
+/* Estilos para el contenedor de las galletas */
+.galletas-container {
+    background-color: #f9f2e7; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+
+    right: 30px; 
+    top: 160px; 
+    width: 1900px; 
+    height: auto; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Asegura que las tarjetas de las galletas se alineen correctamente */
+.galletas-row {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: space-between; 
+    width: 100%; 
+}
+
+/* Modificaciones en las tarjetas de galletas */
+.galleta-card {
+    width: 30%; 
+    height: 250px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para las tarjetas cuando se pasa el ratón */
+.galleta-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la imagen de la galleta */
+.galleta-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Estilo para el nombre de la galleta */
+.galleta-nombre {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-produccion {
+    background-color: #F2DEB3;
+    border-color: #996B4F;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    height: 92px;
+    margin-top: 20px; 
+    align-self: flex-end; 
+    border-radius: 10px;
+}
+
+.modal-produccion:hover {
+    background-color: #fefefe; 
+}

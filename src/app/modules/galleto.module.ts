@@ -3,17 +3,24 @@ import { CommonModule } from '@angular/common';
 import { ProduccionComponent } from './produccion/produccion.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { VentasComponent } from './ventas/ventas.component';
-
-
-
+import { ImageModule } from 'primeng/image';
+import { ButtonModule } from 'primeng/button';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     ProduccionComponent,
     PrincipalComponent,
-    VentasComponent
+    VentasComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
+    ImageModule,
+    ButtonModule,
+    CardModule,
+    InputTextModule
   ],
   exports: [ 
     ProduccionComponent,

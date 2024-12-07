@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para manejar correctamente los tamaños */
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a67653; /* Color marrón del fondo */
+    height: 110px; /* Ajusta la altura del navbar */
+    width: 100vw; /* Usa todo el ancho de la ventana */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Asegúrate de que no dependa de márgenes */
+    top: 0;
+    left: 0;
+  }
+  
+  /* Estilos para la sección izquierda */
+  .navbar-left {
+    display: flex; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-left: 30px; /* Opcional: Espaciado desde el borde izquierdo */
+  }
+  
+  .navbar-left img {
+    width: 220px; /* Ancho del botón */
+    height: 90px; /* Alto del botón */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin rellenos */
+  }
+  
+  .navbar-left-button {
+    width: 220px; /* Ancho del botón */
+    height: 90px; /* Alto del botón */
+    display: flex; /* Para alinear el texto del botón */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    background-color: #CCCCCC; /* Fondo del botón */
+    border: none; /* Sin bordes */
+    color: #000; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    margin: 0; /* Sin separación extra */
+    padding: 0; /* Sin rellenos */
+    border-radius: 0; /* Sin bordes redondeados */
+  }
+  
+  .navbar-left-button:hover {
+    background-color: #CCCCCC; /* Color del botón al pasar el cursor */
+  }
+  
+  /* Estilos para la sección derecha */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 30px; /* Opcional: Espaciado desde el borde derecho */
+    gap: 27px; /* Espaciado entre los elementos */
+  }
+  
+  .notification-icon {
+    font-size: 24px; /* Tamaño del icono */
+    cursor: pointer;
+  }
+  
+  .navbar-button {
+    background-color: #CCCCCC; /* Color gris de los botones */
+    border: none;
+    width: 180px;
+    height: 68px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer; /* Cambia el cursor al pasar */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-button:hover {
+    background-color: #CCCCCC; /* Cambio de color al pasar el cursor */
+  }
+  

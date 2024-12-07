@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProduccionComponent } from './produccion/produccion.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { VentasComponent } from './ventas/ventas.component';
+import { CocinaComponent } from './cocina/cocina.component';
 
 
 
@@ -10,7 +11,8 @@ import { VentasComponent } from './ventas/ventas.component';
   declarations: [
     ProduccionComponent,
     PrincipalComponent,
-    VentasComponent
+    VentasComponent,
+    CocinaComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { VentasComponent } from './ventas/ventas.component';
     ProduccionComponent,
     PrincipalComponent,
     VentasComponent,
+    CocinaComponent
   ],
 })
 export class GalletoModule { }

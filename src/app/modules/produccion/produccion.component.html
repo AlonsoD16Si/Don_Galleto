@@ -1,47 +1,52 @@
-<div class="header">
-  <div class="logo"></div>
-  <div class="menu">
-    <button class="menu-button">Ventas</button>
-    <button class="menu-button">Insumos</button>
-    <button class="menu-button">Reportes</button>
-  </div>
-</div>
+<div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-content">
+    <!-- Botón de cierre -->
+    <button class="close-button" (click)="closeModal()">×</button>
 
-<div class="cards-container">
-  <div class="card" *ngFor="let product of products">
-    <!-- Alerta dinámica -->
-    <div class="alert" [ngStyle]="getAlertStyle(product)">
-      {{ getAlertIcon(product) }}
-    </div>
-
-    <div class="content">
-      <!-- Imagen del producto -->
-      <div class="product-image">
-        <img src="../../../assets/img/galleta1.png" alt="">
-      </div>
-
-      <!-- Nombre del producto -->
-      <p class="title">{{ product.name }}</p>
-
-      <!-- Barra de "Vendido" -->
-      <div class="progress-bar-row">
-        <span>Vendido</span>
-        <div class="progress-bar-container">
-          <div
-            class="progress-bar sold-bar"
-            [style.width]="getSoldPercentage(product) + '%'">
-          </div>
+    <div class="cards-container">
+      <div class="card" *ngFor="let product of products">
+        <!-- Alerta dinámica -->
+        <div class="alert" [ngStyle]="getAlertStyle(product)">
+          <i [class]="getAlertIcon(product)"></i>
         </div>
-      </div>
 
-      <!-- Barra de "Stock" -->
-      <div class="progress-bar-row">
-        <span>Stock</span>
-        <div class="progress-bar-container">
-          <div
-            class="progress-bar stock-bar"
-            [style.width]="getStockPercentage(product) + '%'">
+
+        <div class="content">
+          <!-- Imagen del producto -->
+          <div class="product-image">
+            <img src="../../../assets/img/galleta1.png" alt="Imagen de Galleta">
           </div>
+
+          <!-- Nombre del producto -->
+          <p class="title">{{ product.name }}</p>
+
+          <div class="progress-bar-row">
+            <div class="label-container">
+              <span>Vendido</span>
+              <span>({{ product.sold }})</span>
+            </div>
+            <div class="progress-bar-container">
+              <div
+                class="progress-bar sold-bar"
+                [style.width]="getSoldPercentage(product) + '%'">
+              </div>
+            </div>
+          </div>
+          
+          <div class="progress-bar-row">
+            <div class="label-container">
+              <span>Stock</span>
+              <span>({{ product.stock }})</span>
+            </div>
+            <div class="progress-bar-container">
+              <div
+                class="progress-bar stock-bar"
+                [style.width]="getStockPercentage(product) + '%'">
+              </div>
+            </div>
+          </div>
+          
+
         </div>
       </div>
     </div>

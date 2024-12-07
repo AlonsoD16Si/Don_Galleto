@@ -1,109 +1,127 @@
-/* Header */
-.header {
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Asegura que ocupe todo el ancho */
+  height: 100vh; /* Asegura que ocupe toda la altura */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: var(--brown);
-  padding: 10px 20px;
-  color: white;
+  z-index: 1000;
+  overflow: hidden; /* Evita que se desborde fuera de la pantalla */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: var(--beige);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; /* Ajusta el tamaño del modal al 80% del ancho */
+  max-width: 900px; /* Tamaño máximo */
+  max-height: 90%; /* Altura máxima del modal */
+  overflow-y: auto; /* Permite scroll interno si el contenido es muy grande */
+  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  width: 50px;
-  height: 50px;
-  background-color: var(--beige);
-  border-radius: 5px;
-}
-
-.menu {
-  display: flex;
-  gap: 15px;
-}
-
-.menu-button {
-  background-color: var(--beige);
-  color: var(--brown);
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  font-size: 24px;
   cursor: pointer;
+  color: var(--brown);
   font-weight: bold;
+  z-index: 1001; /* Asegura que el botón esté encima */
 }
 
-.menu-button:hover {
-  background-color: var(--brown);
-  color: var(--beige);
+.close-button:hover {
+  color: var(--red);
 }
 
 /* Cards container */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 20px;
-  padding: 20px;
-  background-color: var(--beige);
+  gap: 15px; /* Espacio entre tarjetas */
+  margin-top: 40px;
 }
 
 /* Card styles */
 .card {
   background-color: var(--gray);
   border: 1px solid var(--brown);
-  border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   position: relative;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: auto; /* Ajuste automático al contenido */
+  width: 70%;
 }
 
+/* Alert */
 .alert {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 30px;
+  height: 20px;
   background-color: var(--yellow);
   color: var(--brown);
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
+/* Product image */
 .product-image {
-  width: 100%;
-  height: 100px;
-  background-color: white;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-image img {
-  width: 50%;
-  height: 100%;
+  max-width: 50%; /* Ajusta el tamaño de la imagen */
+  max-height: 50%;
 }
 
+/* Title */
 .title {
   font-weight: bold;
   color: var(--brown);
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .progress-bar-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  margin: 5px 0;
+  align-items: center; /* Alinea verticalmente */
+  margin-bottom: 10px; /* Espacio entre las filas */
+}
+
+.label-container {
+  width: 80px; /* Ancho fijo para alinear todas las etiquetas */
+  text-align: left; /* Alinea el texto a la izquierda */
+  font-size: 12px; /* Ajusta el tamaño de la fuente */
+  display: flex;
+  justify-content: space-between; /* Espacio entre texto y número */
 }
 
 .progress-bar-container {
-  width: 100%;
+  flex-grow: 1; /* La barra ocupa el espacio restante */
   background-color: var(--beige);
   height: 10px;
   border-radius: 5px;
   overflow: hidden;
+  margin-left: 10px; /* Espacio entre la etiqueta y la barra */
 }
 
 .progress-bar {
@@ -118,3 +136,4 @@
 .stock-bar {
   background-color: var(--green);
 }
+

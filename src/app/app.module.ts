@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { GalletoModule } from './modules/galleto.module';
+import { GalletoModule } from './modules/galleto.module'
+import { CocinaComponent } from './modules/cocina/cocina.component';
 
 @NgModule({
   declarations: [

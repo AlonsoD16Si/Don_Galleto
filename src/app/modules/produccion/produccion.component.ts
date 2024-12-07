@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ProduccionComponent {
   products = [
-    { name: 'Galleta 1', sold: 10, stock: 20 },
-    { name: 'Galleta 2', sold: 15, stock: 10 },
+    { name: 'Galleta 1', sold: 10, stock: 2 },
+    { name: 'Galleta 2', sold: 15, stock: 1 },
     { name: 'Galleta 3', sold: 5, stock: 25 },
     { name: 'Galleta 4', sold: 8, stock: 18 },
     { name: 'Galleta 5', sold: 12, stock: 8 },
@@ -18,35 +18,52 @@ export class ProduccionComponent {
     { name: 'Galleta 9', sold: 9, stock: 14 },
   ];
 
-  // Calcula el porcentaje de vendido
+  showModal: boolean = true; // Variable para controlar la visibilidad del modal
+
+  // Método para cerrar el modal
+  closeModal() {
+    this.showModal = false;
+  }
+
+  // Método para abrir el modal (opcional)
+  openModal() {
+    this.showModal = true;
+  }
+
+  // Método para calcular el porcentaje de vendido
   getSoldPercentage(product: { sold: number; stock: number }): number {
     const total = product.sold + product.stock;
     return (product.sold / total) * 100;
   }
 
-  // Calcula el porcentaje de stock restante
+  // Método para calcular el porcentaje de stock restante
   getStockPercentage(product: { sold: number; stock: number }): number {
     const total = product.sold + product.stock;
     return (product.stock / total) * 100;
   }
 
-  // Devuelve el estilo dinámico para la alerta
-  getAlertStyle(product: { stock: number; sold: number }): any {
-    const stockPercentage = this.getStockPercentage(product);
-    if (stockPercentage < 20) {
-      return { backgroundColor: 'var(--red)', color: 'white' }; // Bajo stock
-    }
-    if (stockPercentage < 50) {
-      return { backgroundColor: 'var(--yellow)', color: 'var(--brown)' }; // Stock medio
-    }
-    return { backgroundColor: 'var(--green)', color: 'var(--brown)' }; // Stock alto
-  }
-
-  // Devuelve el ícono para la alerta según el porcentaje de stock
   getAlertIcon(product: { stock: number; sold: number }): string {
     const stockPercentage = this.getStockPercentage(product);
-    if (stockPercentage < 20) return '⚠️'; // Advertencia
-    if (stockPercentage < 50) return '⚡'; // Stock medio
-    return '✅'; // Stock suficiente
+  
+    if (stockPercentage < 20) {
+      return 'pi pi-exclamation-triangle'; // Triángulo amarillo
+    }
+    if (stockPercentage < 50) {
+      return 'pi pi-exclamation-circle'; // Círculo amarillo
+    }
+    return 'pi pi-check-circle'; // Círculo verde
   }
+  
+  getAlertStyle(product: { stock: number; sold: number }): any {
+    const stockPercentage = this.getStockPercentage(product);
+  
+    if (stockPercentage < 20) {
+      return { backgroundColor: 'var(--red)', color: 'white' }; // Fondo rojo
+    }
+    if (stockPercentage < 50) {
+      return { backgroundColor: 'var(--yellow)', color: 'var(--brown)' }; // Fondo amarillo
+    }
+    return { backgroundColor: 'var(--green)', color: 'white' }; // Fondo verde
+  }
+    
 }

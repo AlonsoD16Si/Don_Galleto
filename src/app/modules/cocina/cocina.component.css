@@ -56,14 +56,13 @@
   }
   
   .btn-elaborar {
-    background-color: var(--beige);
-    border: none;
+    background-color: var(--amarillito);
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     font-family: "Halant";
-    border-color:chocolate;
+    border-color: var(--borde);
   }
   
   .status {

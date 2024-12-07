@@ -1,6 +1,7 @@
 .cocina-container {
     padding: 20px;
     background-color: var(--beige);
+    font-family: "Halant";
   }
   
   .cards-container {
@@ -20,6 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: "Halant";
   }
   
   .alert {
@@ -34,6 +36,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
+    font-family: "Halant";
   }
   
   .content {
@@ -53,12 +56,14 @@
   }
   
   .btn-elaborar {
-    background-color: var(--yellow);
+    background-color: var(--beige);
     border: none;
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    font-family: "Halant";
+    border-color:chocolate;
   }
   
   .status {
@@ -71,6 +76,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    font-family: "Halant";
   }
   
   table th, table td {
@@ -86,6 +92,7 @@
     border-radius: 5px;
     cursor: pointer;
     color: white;
+    font-family: "Halant";
   }
   
   .btn-accion:hover {
@@ -97,6 +104,7 @@
     font-weight: bold;
     color: var(--green);
     text-align: center;
+    font-family: "Halant";
   }
 
   .btn-cancelar {
@@ -107,10 +115,12 @@
     cursor: pointer;
     color: white;
     margin-left: 5px;
+    font-family: "Halant";
   }
   
   .btn-cancelar:hover {
     background-color: var(--brown);
+    font-family: "Halant";
   }
   
   

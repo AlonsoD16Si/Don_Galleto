@@ -1,20 +1,18 @@
 <div class="cocina-container">
     <!-- Tarjetas de recetas -->
     <div class="cards-container">
-      <div class="card" *ngFor="let receta of recetas">
-        <!-- Alerta -->
-        <div class="alert" [ngStyle]="getAlertStyle(receta)">
-          <i [class]="getAlertIcon(receta)"></i>
-        </div>
-        <!-- Contenido de la tarjeta -->
-        <div class="content">
-          <p class="title">{{ receta.name }}</p>
-          <div class="actions">
-            <button class="btn-elaborar" (click)="elaborarPedido(receta)">Elaborar</button>
-            <span class="status">{{ receta.status }}</span>
-          </div>
-        </div>
-      </div>
+        <div class="card" *ngFor="let receta of recetas">
+            <div class="alert" [ngStyle]="getAlertStyle(receta)">
+              <i [class]="getAlertIcon(receta)"></i>
+            </div>
+            <div class="content">
+              <p class="title">{{ receta.name }}</p>
+              <div class="actions">
+                <button class="btn-elaborar" (click)="elaborarPedido(receta)">Elaborar</button>
+                <span class="status">{{ receta.status }}</span>
+              </div>
+            </div>
+          </div>          
     </div>
   
     <!-- Tabla de pedidos -->

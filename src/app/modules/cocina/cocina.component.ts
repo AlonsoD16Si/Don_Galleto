@@ -41,15 +41,14 @@ export class CocinaComponent {
     if (estadoActualIndex < this.pedidoEstados.length - 1) {
       pedido.estatus = this.pedidoEstados[estadoActualIndex + 1];
     }
-
-    // Si el pedido llega a "OK", actualiza también la alerta de la receta
-    if (pedido.estatus === 'OK') {
-      const receta = this.recetas.find((r) => r.name === pedido.receta);
-      if (receta) {
-        receta.status = 'OK';
-      }
+  
+    // Actualiza el estado de la receta correspondiente
+    const receta = this.recetas.find((r) => r.name === pedido.receta);
+    if (receta) {
+      receta.status = pedido.estatus; // Sincroniza el estado del pedido con la receta
     }
   }
+  
 
   // Cancela un pedido
   cancelarPedido(pedido: any) {
@@ -65,30 +64,31 @@ export class CocinaComponent {
   }
 
   // Obtiene el estilo de la alerta según el estado
-  getAlertStyle(receta: any): any {
-    switch (receta.status) {
-      case 'Preparación':
-        return { backgroundColor: 'var(--yellow)', color: 'var(--brown)' };
-      case 'Horneado':
-        return { backgroundColor: 'var(--orange)', color: 'white' };
-      case 'OK':
-        return { backgroundColor: 'var(--green)', color: 'white' };
-      default:
-        return { backgroundColor: 'var(--gray)', color: 'white' };
-    }
+  // Obtiene el estilo de la alerta según el estado
+getAlertStyle(receta: any): any {
+  switch (receta.status) {
+    case 'Preparación':
+      return { backgroundColor: 'var(--yellow)', color: 'var(--brown)' };
+    case 'Horneado':
+      return { backgroundColor: 'var(--brown)', color: 'white' }; // Brown durante horneado
+    case 'OK':
+      return { backgroundColor: 'var(--green)', color: 'white' };
+    default:
+      return { backgroundColor: 'var(--gray)', color: 'white' };
   }
+}
 
-  // Obtiene el ícono de la alerta según el estado
-  getAlertIcon(receta: any): string {
-    switch (receta.status) {
-      case 'Preparación':
-        return 'pi pi-exclamation-triangle';
-      case 'Horneado':
-        return 'pi pi-spinner';
-      case 'OK':
-        return 'pi pi-check-circle';
-      default:
-        return 'pi pi-info-circle';
-    }
+// Obtiene el ícono de la alerta según el estado
+getAlertIcon(receta: any): string {
+  switch (receta.status) {
+    case 'Preparación':
+      return 'pi pi-exclamation-triangle';
+    case 'Horneado':
+      return 'pi pi-info-circle'; // Icono de estufa
+    case 'OK':
+      return 'pi pi-check-circle';
+    default:
+      return 'pi pi-info-circle';
   }
+}
 }
